@@ -1,8 +1,9 @@
 # HealthyMe - Full Stack Health Tracker App
 
-**HealthyMe** is a comprehensive health tracking application designed to help users monitor their daily wellness activities. It features a mobile frontend built with **Flutter** and a robust RESTful backend built with **Node.js, Express, and MongoDB**.
+**HealthyMe** is a comprehensive health tracking application designed to help users monitor their daily wellness activities.  
+It features a mobile frontend built with **Flutter** and a robust RESTful backend built with **Node.js, Express, and MongoDB**.
 
-The app allows users to track vital metrics like water intake, steps, calories, and sleep, while keeping them engaged through daily goals and streak counters.
+The app allows users to track vital metrics like water intake, steps, calories, and sleep, while staying motivated with daily goals and streak counters.
 
 ---
 
@@ -14,14 +15,14 @@ The app allows users to track vital metrics like water intake, steps, calories, 
   - **Visual Progress:** Circular progress rings for Steps, Water, Calories, and Sleep.
   - **Streak Counter:** Gamified daily logging streak with a visual badge (🔥).
   - **Heart Rate:** Quick view of the latest heart rate log.
-- **Logging:** Easy-to-use form to add daily health logs. Supports partial updates (e.g., logging just water).
+- **Logging:** Add daily health logs easily. Supports partial updates (e.g., logging only water).
 - **History:** View past health logs filtered by custom date ranges.
-- **Goal Setting:** Users can customize their daily targets for steps, hydration, calories, and sleep.
-- **UI/UX:** Modern interface with a custom splash screen, gradient backgrounds, and intuitive navigation.
+- **Goal Setting:** Customize daily targets for steps, hydration, calories, and sleep.
+- **UI/UX:** Modern interface with custom splash screen, gradient backgrounds, and intuitive navigation.
 
 ### 🖥️ Backend (Node.js)
-- **REST API:** Structured API endpoints for Authentication and Health Data management.
-- **Database:** MongoDB integration via Mongoose for data persistence.
+- **REST API:** Structured endpoints for Authentication and Health Data management.
+- **Database:** MongoDB via Mongoose for data persistence.
 - **Security:**
   - Password hashing using bcrypt.
   - Protected routes using JSON Web Token (JWT) middleware.
@@ -57,22 +58,23 @@ HealthyMe/
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend:** Flutter, Dart
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
+
+- **Frontend:** Flutter, Dart  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
 
 **Flutter Dependencies:**
-- `http` – For API requests.
-- `shared_preferences` – For storing auth tokens locally.
-- `percent_indicator` – For dashboard progress rings.
-- `intl` – For date formatting.
+- `http` – For API requests.  
+- `shared_preferences` – For storing auth tokens locally.  
+- `percent_indicator` – For dashboard progress rings.  
+- `intl` – For date formatting.  
 
 ---
 
 ## 🔧 Installation & Setup
 
 ### 1️⃣ Backend Setup
-1. Open a terminal and navigate to the backend folder:
+1. Navigate to the backend folder:
    ```bash
    cd health_backend
 ````
@@ -82,7 +84,7 @@ HealthyMe/
    ```bash
    npm install
    ```
-3. Create a `.env` file in the backend root with your configuration:
+3. Create a `.env` file in the backend root:
 
    ```env
    PORT=5000
@@ -95,11 +97,11 @@ HealthyMe/
    node server.js
    ```
 
-The server will run at: `http://0.0.0.0:5000`
+Server will run at: `http://0.0.0.0:5000`
 
 ### 2️⃣ Frontend Setup
 
-1. Open a new terminal and navigate to the frontend folder:
+1. Navigate to the frontend folder:
 
    ```bash
    cd health_app
@@ -112,8 +114,8 @@ The server will run at: `http://0.0.0.0:5000`
 3. Configure the API URL:
 
    * Open `lib/utils/constants.dart`.
-   * Set `BASE_URL` to your machine's IP address, e.g., `http://192.168.1.5:5000/api`.
-   * **Note:** For Android Emulator, use `http://10.0.2.2:5000/api`.
+   * Set `BASE_URL` to your machine's IP (e.g., `http://192.168.1.5:5000/api`).
+   * For Android Emulator, use: `http://10.0.2.2:5000/api`.
 4. Run the app:
 
    ```bash
@@ -124,6 +126,8 @@ The server will run at: `http://0.0.0.0:5000`
 
 ## 🤝 Contributing
 
-This is a personal project for learning Full Stack development with Flutter and Node.js. Feel free to **fork it** and experiment!
+This is a personal project for learning Full Stack development with Flutter and Node.js.
+Feel free to **fork it**, experiment, and improve the project!
+
 
 
