@@ -43,7 +43,8 @@ class _SplashScreenState extends State<SplashScreen>
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (_) => token != null ? const DashboardScreen() : const LoginScreen(),
+        builder: (_) =>
+            token != null ? const DashboardScreen() : const LoginScreen(),
       ),
     );
   }
@@ -61,7 +62,6 @@ class _SplashScreenState extends State<SplashScreen>
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            // 🔹 Updated to blueish theme
             colors: [Color(0xFF42A5F5), Color(0xFF1E88E5)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -72,32 +72,32 @@ class _SplashScreenState extends State<SplashScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // 🔹 App Icon / Logo with subtle shadow
+              // 🔹 Logo Circle
               Container(
-                padding: const EdgeInsets.all(25),
+                padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withOpacity(0.28),
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.15),
+                      color: Colors.white.withOpacity(0.17),
                       blurRadius: 15,
                       spreadRadius: 5,
                       offset: const Offset(0, 5),
                     ),
                   ],
                 ),
-                // 🔹 CHANGED ICON HERE
-                child: const Icon(
-                  Icons.add, // Changed from Icons.favorite
-                  size: 70,
-                  color: Colors.white,
+
+                // 🔹 App Image Logo
+                child: Image.asset(
+                  "assets/HealthyMe.jpg",
+                  width: 85,
+                  height: 85,
                 ),
               ),
 
               const SizedBox(height: 25),
 
-              // App Name with white shadow
               const Text(
                 "HealthyMe",
                 style: TextStyle(
@@ -117,7 +117,6 @@ class _SplashScreenState extends State<SplashScreen>
 
               const SizedBox(height: 10),
 
-              // Tagline in lighter white
               const Text(
                 "Track. Improve. Live Better.",
                 style: TextStyle(
@@ -128,7 +127,6 @@ class _SplashScreenState extends State<SplashScreen>
 
               const SizedBox(height: 40),
 
-              // 🔹 Circular loader styled for white theme
               const CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                 strokeWidth: 3,

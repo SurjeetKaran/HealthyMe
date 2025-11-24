@@ -95,7 +95,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             end: Alignment.bottomCenter,
           ),
         ),
-        child: Center( // 👈 Added Center to keep form in middle of screen
+        child: Center(
+          // 👈 Added Center to keep form in middle of screen
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -109,10 +110,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     color: Colors.white.withOpacity(0.2),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(
-                    Icons.add,
-                    size: 70,
-                    color: Colors.white,
+                  child: Image.asset(
+                    "assets/HealthyMe.jpg",
+                    width: 70,
+                    height: 70,
+                    fit: BoxFit.contain,
                   ),
                 ),
 
@@ -137,8 +139,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       _buildTextField(
                         controller: _nameController,
                         label: "Full Name",
-                        validator: (v) =>
-                            v == null || v.trim().isEmpty ? "Enter your name" : null,
+                        validator: (v) => v == null || v.trim().isEmpty
+                            ? "Enter your name"
+                            : null,
                       ),
                       const SizedBox(height: 12),
 
@@ -148,10 +151,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         label: "Email",
                         keyboardType: TextInputType.emailAddress,
                         validator: (v) {
-                          if (v == null || v.trim().isEmpty) return "Enter email";
+                          if (v == null || v.trim().isEmpty)
+                            return "Enter email";
                           final emailRegex =
                               RegExp(r"^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$");
-                          return emailRegex.hasMatch(v) ? null : "Enter valid email";
+                          return emailRegex.hasMatch(v)
+                              ? null
+                              : "Enter valid email";
                         },
                       ),
                       const SizedBox(height: 12),
@@ -210,8 +216,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                           ),
                         ),
-                        validator: (v) =>
-                            v != null && v.length >= 6 ? null : "Min 6 characters",
+                        validator: (v) => v != null && v.length >= 6
+                            ? null
+                            : "Min 6 characters",
                       ),
                       const SizedBox(height: 24),
 
@@ -287,4 +294,3 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 }
-

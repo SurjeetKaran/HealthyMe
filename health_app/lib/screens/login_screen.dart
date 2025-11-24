@@ -16,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final AuthService authService = AuthService();
 
   bool isLoading = false;
-  bool _obscurePassword = true; // 👁 control password visibility
+  bool _obscurePassword = true;
 
   Future<void> handleLogin() async {
     String email = emailController.text.trim();
@@ -54,10 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 🔹 Background gradient for health theme
       body: Container(
         width: double.infinity,
-        height: double.infinity, // 👈 ADD THIS LINE TO FIX THE HEIGHT ISSUE
+        height: double.infinity,
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -66,24 +65,32 @@ class _LoginScreenState extends State<LoginScreen> {
             end: Alignment.bottomCenter,
           ),
         ),
-        child: Center( // 👈 Optional: Wrap ScrollView in Center to ensure alignment
+        child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 60), // Reduced top spacing since we use Center now
+                const SizedBox(height: 40),
 
-                // App Logo or Icon
+                // 🔹 Updated Logo with your PNG
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(22),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withOpacity(0.28),
                     shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withOpacity(0.17),
+                        blurRadius: 12,
+                        spreadRadius: 3,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
                   ),
-                  child: const Icon(
-                    Icons.add,
-                    size: 70,
-                    color: Colors.white,
+                  child: Image.asset(
+                    "assets/HealthyMe.jpg",
+                    width: 85,
+                    height: 85,
                   ),
                 ),
 
@@ -97,6 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: Colors.white,
                   ),
                 ),
+
                 const SizedBox(height: 25),
 
                 // 📧 Email Field
@@ -114,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 15),
 
-                // 🔒 Password Field with Eye Icon
+                // 🔒 Password Field
                 TextField(
                   controller: passwordController,
                   obscureText: _obscurePassword,
@@ -128,7 +136,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                        _obscurePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
                         color: Colors.grey,
                       ),
                       onPressed: () {
@@ -139,6 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 20),
 
                 // 🔘 Login Button
@@ -155,9 +166,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: const Text("Login"),
                         ),
                       ),
+
                 const SizedBox(height: 15),
 
-                // 🔹 LOGIN → REGISTER LINK
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

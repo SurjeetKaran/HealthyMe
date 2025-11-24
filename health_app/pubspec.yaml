@@ -1,5 +1,6 @@
-name: health_app
-description: "A new Flutter project."
+name: healthy_me
+description: "HealthyMe - A full-stack health tracking application."
+
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -19,11 +20,23 @@ dependencies:
   
   # UI & Notifications
   percent_indicator: ^4.2.3
+  font_awesome_flutter: ^10.12.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/HealthyMe.jpg
+
+# App Launcher Icon Configuration
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/HealthyMe.jpg"
+

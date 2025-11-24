@@ -1,7 +1,5 @@
-=========================
-
+==========================
 🌍 GLOBAL / MISC
-
 ==========================
 
 .DS_Store
@@ -14,65 +12,95 @@
 *.iml
 
 ==========================
-
 🖥️ BACKEND (Node.js)
-
 ==========================
 
-Dependencies
-
+# Dependencies
 node_modules/
 
-Environment Variables (CRITICAL: Do not commit secrets)
-
+# Environment Variables (DO NOT COMMIT)
 .env
 .env.local
 .env.development
 .env.test
 .env.production
 
-Logs
-
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 ==========================
-
 📱 FRONTEND (Flutter)
-
 ==========================
 
-Flutter/Dart/Pub related
-
+# Flutter/Dart/Pub related
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
 build/
+coverage/
 
-Android specific
+# Generated files
+generated_plugin_registrant.dart
+
+==========================
+🤖 ANDROID
+==========================
 
 android/local.properties
 android/key.properties
-android/app/debug
-android/app/profile
-android/app/release
+
+# Build outputs
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# Keystores
 **/*.keystore
+**/*.jks
 
-iOS specific
+# Gradle cache
+.gradle/
+android/.gradle/
 
-ios/.symlinks
+# Misc
+android/captures/
+
+==========================
+🍏 iOS
+==========================
+
 ios/Pods/
-ios/Podfile.lock
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/ServiceDefinitions.json
 
-Web specific
+# Xcode workspace auto files
+ios/Runner.xcworkspace/
+ios/Runner.xcodeproj/project.xcworkspace/
+xcuserdata/
+*.xcuserstate
+
+# iOS build
+ios/Flutter/ephemeral/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+
+==========================
+🌐 WEB
+==========================
 
 web/build/
 
-Exceptions (Files you usually WANT to keep)
+==========================
+🧪 EXCEPTIONS — Files that MUST be kept
+==========================
 
-!main.dart
 !pubspec.yaml
 !pubspec.lock
+!lib/main.dart
